@@ -9,16 +9,39 @@ import ProjectCard, { Project } from "@/components/ProjectCard";
 
 const projects: Project[] = [
   {
-    title: "Nexprobiz GEN - Digital Accountant",
-    description:
-      "Financial accounting software enabling ledgers, transactions, and automated reports; later enhanced with agentic AI and LangGraph for automation and insights.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "LangChain", "LangGraph", "n8n"],
+    id: "Academia Assistant",
+    title: "Academia Assistant",
+    description: "An AI-augmented LMS for admins, professors, and students; generates course content, outlines, lecture materials, and exam questions using LLMs.",
+    tech: ["React", "Next.js", "LLMs", "LangChain", "LangGraph"],
+    liveUrl: "https://drive.google.com/file/d/11uv7suJCrWZyV9ODupy5CpZCxVRvzIbb/view?usp=sharing",
+    image: "/projects/ask-db.png",
   },
   {
-    title: "LearnScope - Academia Assistant",
-    description:
-      "AI-augmented LMS for admins, professors, and students; generates course content, outlines, lecture materials, and exam questions using LLMs.",
-    tech: ["React", "Next.js", "LLMs", "LangChain", "LangGraph"],
+    id: "ask-db",
+    title: "AskDB - AI Agent for Database Queries",
+    description: "An AI Agent that allows users to ask questions about the database and get the answers.",
+    tech: ["Relevance AI", "Neon Database", "Slack"],
+    liveUrl: "https://drive.google.com/file/d/11uv7suJCrWZyV9ODupy5CpZCxVRvzIbb/view?usp=sharing",
+    repoUrl: "https://app.relevanceai.com/marketplace/d7b62b/b0a27b06-d3d8-4354-a29c-ffadd11c5983/search?search=ask+db&listing=357899e5-1166-44a9-a0cf-664aedda7b50",
+    image: "/projects/ask-db.png",
+    documentationUrl: "https://drive.google.com/file/d/1rf8mBjWKs51NYY-62mi3mtv0bpHv7Tus/view"
+  },
+  {
+    id: "insight-beam",
+    title: "Insight Beam - Book Review Web Application",
+    description: "A web application that allows users to review books and share their thoughts with others.",
+    tech: ["Next.js", "Express.js", "PostgreSQL"],
+    repoUrl: "https://github.com/YUMNAWARIS/insight-beam",
+    image: "/projects/insight-beam.png",
+    liveUrl: "https://drive.google.com/file/d/11ZQOPeAgK6h72WhEQ05IAINe0qLY8DNb/view?usp=sharing",
+  },
+  {
+    id: "Personal Finance Tracker",
+    title: "Personal Finance Tracker",
+    description: "A web application that allows users to track their personal finances and get insights on their spending.",
+    tech: ["Next.js", "Express.js", "PostgreSQL"],
+    repoUrl: "https://github.com/YUMNAWARIS/PersonalFinance",
+    image: "/projects/personal-finance.png",
   },
 ];
 
@@ -36,19 +59,17 @@ export default function ProjectsPage() {
             Projects
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
-            Personal and Work related Projects I've worked on
+            Personal Projects I've worked on
           </Typography>
         </Box>
         <Grid container spacing={3}>
           {projects.map((p) => (
             <Grid key={p.title} size={{ xs: 12, md: 6 }}>
               <ProjectCard project={p} />
-            </Grid>
+              </Grid>
           ))}
         </Grid>
       </Container>
     </Box>
   );
 }
-
-

@@ -9,12 +9,14 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 export type Project = {
+  id: string;
   title: string;
   description: string;
   image?: string;
   tech?: string[];
   repoUrl?: string;
   liveUrl?: string;
+  documentationUrl?: string;
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -38,10 +40,13 @@ export default function ProjectCard({ project }: { project: Project }) {
       </CardContent>
       <CardActions>
         {project.liveUrl ? (
-          <Button size="small" href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live</Button>
+          <Button size="small" href={project.liveUrl} target="_blank" rel="noopener noreferrer">Demo</Button>
         ) : null}
         {project.repoUrl ? (
           <Button size="small" href={project.repoUrl} target="_blank" rel="noopener noreferrer" variant="outlined">Code</Button>
+        ) : null}
+        {project.documentationUrl ? (
+          <Button size="small" href={project.documentationUrl} target="_blank" rel="noopener noreferrer" variant="outlined">Documentation</Button>
         ) : null}
       </CardActions>
     </Card>
