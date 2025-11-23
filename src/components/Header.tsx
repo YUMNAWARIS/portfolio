@@ -25,7 +25,7 @@ const sections = [
   { label: "MOOCs & Certs", href: "/moocs-certs" },
   { label: "Activities", href: "/activities" },
   { label: "Projects", href: "/projects" },
-  { label: "Blogs", href: "/blogs" },
+  { label: "Writeups", href: "/blogs" },
 ];
 
 export default function Header() {
