@@ -59,7 +59,7 @@ export default function ProjectsPage() {
             Projects
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
-            Personal Projects I've worked on
+            Personal Projects I&apos;ve worked on
           </Typography>
         </Box>
         <Grid container spacing={3}>

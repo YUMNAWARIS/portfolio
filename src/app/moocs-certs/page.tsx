@@ -105,7 +105,7 @@ export default function MOOCsPage() {
             MOOCs & Certificates
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
-            MOOCs and Certificates I've completed
+            MOOCs and Certificates I&apos;ve completed
           </Typography>
         </Box>
         <Stack spacing={3}>

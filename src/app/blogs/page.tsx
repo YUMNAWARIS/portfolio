@@ -81,7 +81,7 @@ export default function BlogsPage() {
             Writeups
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
-            Writeups on various topics I've worked on
+            Writeups on various topics I&apos;ve worked on
           </Typography>
         </Box>
         <Stack spacing={2} sx={{ mb: 3 }}>

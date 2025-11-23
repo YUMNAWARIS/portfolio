@@ -148,7 +148,7 @@ export default function ActivitiesPage() {
             Activities
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
-            Hackathons, competitions, and events I’ve participated in
+            Hackathons, competitions, and events I&apos;ve participated in
           </Typography>
         </Box>
 

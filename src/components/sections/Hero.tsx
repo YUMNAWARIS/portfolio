@@ -67,7 +67,7 @@ export default function Hero() {
               color: "transparent",
             }}
           >
-            Hi, I'm Yumna
+            Hi, I&apos;m Yumna
           </Typography>
           <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontSize: { xs: 16, md: 18 }, lineHeight: 1.7, maxWidth: 70 + "ch" }}>
             I&apos;m a <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Software Engineer II</Box> at
@@ -75,11 +75,11 @@ export default function Hero() {
             <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> vertical SaaS companies</Box> manage their
             merchants and processor relationships more effectively.
             <br />
-            Alongside my role, I’m studying <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>machine learning</Box> and
+            Alongside my role, I&apos;m studying <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>machine learning</Box> and
             <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> AI</Box>, building personal projects and
             replicating published papers to deepen my understanding.
             <br />
-            I’m exploring <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Master’s opportunities in AI/ML Data-intensive systems</Box>
+            I&apos;m exploring <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Master&rsquo;s opportunities in AI/ML Data-intensive systems</Box>
           </Typography>
           <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
             <Button component="a" href="/yumnawaris-resume.pdf" target="_blank" rel="noopener noreferrer" variant="outlined">Resume</Button>
