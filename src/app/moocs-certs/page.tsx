@@ -80,24 +80,14 @@ const CERTS = [
             "Async I/O (Linux)",
         ]
     },
-
-    // ---- Awards (2) ----
     {
-        title: "Procom 2022 - Hackathon Winner",
-        provider: "award",
-        issuer: "FAST",
-        date: "2022",
-        url: "", 
-        skills: ["Teamwork", "Prototyping", "Problem Solving"]
+      title: "Agentic AI",
+      provider: "deeplearning.ai",
+      issuer: "DeepLearning.AI",
+      date: "2025",
+      url: "https://learn.deeplearning.ai/certificates/11cff4c0-24ed-4e45-b38e-01c5ed13005c",
+      skills: ["Agentic AI", "LLMs", "LangChain"]
     },
-    {
-        title: "Code bit - Programming Competition",
-        provider: "award",
-        issuer: "University Of Karachi",
-        date: "2022",
-        url: "",
-        skills: ["Algorithms", "Problem Solving", "Competitive Programming"]
-    }
 ];
 
 
@@ -113,9 +103,9 @@ export default function MOOCsPage() {
         <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 40 }, mb: 4, fontWeight: 800, background: "linear-gradient(90deg, #9c27b0, #1976d2)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>MOOCs & Certificates</Typography>
         <Stack spacing={3}>
           {[
+            { key: "deeplearning.ai", label: "DeepLearning.AI", icon: <SchoolIcon color="primary" /> },
             { key: "coursera", label: "Coursera", icon: <SchoolIcon color="primary" /> },
             { key: "udemy", label: "Udemy", icon: <SchoolIcon color="primary" /> },
-            { key: "award", label: "Awards", icon: <MilitaryTechIcon color="secondary" /> },
           ].map((group) => {
             const items = CERTS.filter((c) => c.provider === (group.key as any));
             if (!items.length) return null;

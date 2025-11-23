@@ -21,9 +21,9 @@ import { ColorModeContext } from "@/theme";
 import Link from "next/link";
 
 const sections = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About Me", href: "/" },
   { label: "MOOCs & Certs", href: "/moocs-certs" },
+  { label: "Activities", href: "/activities" },
   { label: "Projects", href: "/projects" },
   { label: "Blogs", href: "/blogs" },
 ];

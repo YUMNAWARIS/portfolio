@@ -82,8 +82,7 @@ export default function Hero() {
             I’m exploring <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Master’s opportunities in AI/ML Data-intensive systems</Box>
           </Typography>
           <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-            <Button size="large" href="/projects">View Projects</Button>
-            <Button size="large" href="/about" variant="outlined">About Me</Button>
+            <Button component="a" href="/yumnawaris-resume.pdf" target="_blank" rel="noopener noreferrer" variant="outlined">Resume</Button>
           </Box>
         </Box>
 
