@@ -10,7 +10,6 @@ import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
 import Button from "@mui/material/Button";
 import SchoolIcon from "@mui/icons-material/School";
-import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const CERTS = [
@@ -114,7 +113,7 @@ export default function MOOCsPage() {
             { key: "coursera", label: "Coursera", icon: <SchoolIcon color="primary" /> },
             { key: "udemy", label: "Udemy", icon: <SchoolIcon color="primary" /> },
           ].map((group) => {
-            const items = CERTS.filter((c) => c.provider === (group.key as any));
+            const items = CERTS.filter((c) => c.provider === (group.key as string));
             if (!items.length) return null;
             return (
               <Box key={group.key}>

@@ -12,7 +12,7 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineDot, { TimelineDotProps, TimelineDotPropsColorOverrides } from "@mui/lab/TimelineDot";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import SchoolIcon from "@mui/icons-material/School";
 
@@ -102,7 +102,7 @@ export default function Timeline() {
               return (
                 <TimelineItem key={`${item.type}-${index}`}>
                   <TimelineSeparator>
-                    <TimelineDot color={color as any} variant="filled">
+                    <TimelineDot color={color as unknown as TimelineDotProps['color']} variant="filled">
                       <Icon fontSize="small" />
                     </TimelineDot>
                     {!isLast && <TimelineConnector />}
@@ -119,7 +119,6 @@ export default function Timeline() {
                         <Chip
                           size="small"
                           label={item.type === "work" ? "Work" : "Education"}
-                          color={color as any}
                           variant="outlined"
                           sx={{ ml: 0.5 }}
                         />

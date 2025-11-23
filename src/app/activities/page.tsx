@@ -7,8 +7,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import Chip from "@mui/material/Chip";
-import Button from "@mui/material/Button";
+import Chip, { ChipProps } from "@mui/material/Chip";
 
 type Activity = {
   name: string;
@@ -94,7 +93,7 @@ function ActivityCard({ a }: { a: Activity }) {
         />
         <Chip
           size="small"
-          color={typeToColor(a.type) as any}
+          color={typeToColor(a.type) as ChipProps['color']}
           label={a.type}
           sx={{
             position: "absolute",
