@@ -100,7 +100,14 @@ export default function MOOCsPage() {
         background: "radial-gradient(closest-side, rgba(25,118,210,0.18), transparent 70%)", filter: "blur(10px)" }
     }}>
       <Container>
-        <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 40 }, mb: 4, fontWeight: 800, background: "linear-gradient(90deg, #9c27b0, #1976d2)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>MOOCs & Certificates</Typography>
+      <Box sx={{ textAlign: "center", mb: 3 }}>
+          <Typography variant="h5" sx={{ fontWeight: 600 }}>
+            MOOCs & Certificates
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
+            MOOCs and Certificates I've completed
+          </Typography>
+        </Box>
         <Stack spacing={3}>
           {[
             { key: "deeplearning.ai", label: "DeepLearning.AI", icon: <SchoolIcon color="primary" /> },

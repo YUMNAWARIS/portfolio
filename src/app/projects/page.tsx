@@ -31,7 +31,14 @@ export default function ProjectsPage() {
         background: "radial-gradient(closest-side, rgba(25,118,210,0.18), transparent 70%)", filter: "blur(10px)" }
     }}>
       <Container>
-        <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 40 }, mb: 4, fontWeight: 800, background: "linear-gradient(90deg, #9c27b0, #1976d2)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>Projects</Typography>
+        <Box sx={{ textAlign: "center", mb: 3 }}>
+          <Typography variant="h5" sx={{ fontWeight: 600 }}>
+            Projects
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
+            Personal and Work related Projects I've worked on
+          </Typography>
+        </Box>
         <Grid container spacing={3}>
           {projects.map((p) => (
             <Grid key={p.title} size={{ xs: 12, md: 6 }}>

@@ -30,7 +30,7 @@ const activities: Activity[] = [
       converts it into SQL, executes it on the Neon database via HTTP, 
       and returns clear, conversational results back to Slack.
     `,
-    image: "/hackathon-2025.png",
+    image: "/activities/hackathon-2025.png",
     type: "hackathon",
   },
   {
@@ -39,7 +39,7 @@ const activities: Activity[] = [
     date: "25th March 2022",
     description: `Participated in Hackathon 2022 of Fast Procom. Our team got 1st rank out of 10. 
     We proposed an IOT based system for solving major problems of a metropolitan city like Karachi.`,
-    image: "/hackathon-2022.png",
+    image: "/activities/hackathon-2022.png",
     type: "hackathon",
   },
   {
@@ -47,7 +47,7 @@ const activities: Activity[] = [
     organizer: "Department of Computer Science, UBIT",
     date: "9th March 2022",
     description: "Participated in Speed Programming Competition of UOK - UBIT. Our team got 7th rank out of 39.",
-    image: "/codebits.png",
+    image: "/activities/codebits.png",
     type: "competition",
   }
 ];

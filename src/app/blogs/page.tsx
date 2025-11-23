@@ -69,8 +69,14 @@ export default function BlogsPage() {
         background: "radial-gradient(closest-side, rgba(25,118,210,0.18), transparent 70%)", filter: "blur(10px)" }
     }}>
       <Container>
-        <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 40 }, mb: 3, fontWeight: 800, background: "linear-gradient(90deg, #9c27b0, #1976d2)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>Blogs</Typography>
-
+        <Box sx={{ textAlign: "center", mb: 3 }}>
+          <Typography variant="h5" sx={{ fontWeight: 600 }}>
+            Writeups
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
+            Writeups on various topics I've worked on
+          </Typography>
+        </Box>
         <Stack spacing={2} sx={{ mb: 3 }}>
           <TextField
             placeholder="Search posts"
