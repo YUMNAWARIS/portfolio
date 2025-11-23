@@ -38,6 +38,13 @@ const blogs: Blog[] = [
     tags: ["LangChain", "AI", "LangGraph"],
     date: "Sep 1, 2025",
   },
+  {
+    title: "What Drives Exam Scores? A Clean, Reproducible ML Pipeline",
+    description: "Analyzing behavioral, school, and family factors to predict exam scores.",
+    url: "https://kaggle.com/writeups/yumnawaris/what-drives-exam-scores-a-clean-reproducible-ml-pi",
+    tags: ["ML", "Data Analysis", "Data Science", "Kaggle"],
+    date: "Aug 31, 2025",
+  }
 ];
 export default function BlogsPage() {
   const [search, setSearch] = React.useState("");
