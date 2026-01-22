@@ -12,8 +12,8 @@ const projects: Project[] = [
     id: "Academia Assistant",
     title: "Academia Assistant",
     description: "An AI-augmented LMS for admins, professors, and students; generates course content, outlines, lecture materials, and exam questions using LLMs.",
-    tech: ["React", "Next.js", "LLMs", "LangChain", "LangGraph"],
-    liveUrl: "https://drive.google.com/file/d/11uv7suJCrWZyV9ODupy5CpZCxVRvzIbb/view?usp=sharing",
+    tech: ["LLMs", "LangChain", "LangGraph", "Streamlit"],
+    documentationUrl: "https://drive.google.com/drive/u/2/folders/1gvkfV1hQFn94flZiT0eZIUr82z4KhcnP",
     image: "/projects/ask-db.png",
   },
   {
