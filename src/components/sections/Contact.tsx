@@ -13,101 +13,123 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LanguageIcon from "@mui/icons-material/Language";
-import ArticleIcon from "@mui/icons-material/Article";
-import SchoolIcon from "@mui/icons-material/School";
+import type { ComponentType } from "react";
+import type { SvgIconProps } from "@mui/material/SvgIcon";
+import SectionBackdrop, { type Blob } from "@/components/SectionBackdrop";
+import GradientText from "@/components/GradientText";
+import { contactInfo, socialLinks } from "@/data/contact";
+
+const CONTACT_BLOBS: [Blob, Blob] = [
+  { color: "blue", size: 380, blur: 12, opacity: 0.22, position: { left: -160, top: -120 } },
+  { color: "purple", size: 420, blur: 12, opacity: 0.22, position: { right: -160, bottom: -120 } },
+];
+
+type ContactRowProps = {
+  icon: ComponentType<SvgIconProps>;
+  label: string;
+  value: string;
+  href: string;
+  copyValue: string;
+  copyKey: string;
+  copied: string | null;
+  onCopy: (value: string, key: string) => void;
+};
+
+function ContactRow({ icon: Icon, label, value, href, copyValue, copyKey, copied, onCopy }: ContactRowProps) {
+  return (
+    <>
+      <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 1 }}>
+        <Icon color="primary" />
+        <Typography variant="h6">{label}</Typography>
+      </Stack>
+      <Stack direction="row" alignItems="center" justifyContent="space-between">
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          {value}
+        </Typography>
+        <Stack direction="row" spacing={1}>
+          <IconButton component="a" href={href} aria-label={`${label} ${value}`}>
+            <Icon fontSize="small" />
+          </IconButton>
+          <IconButton onClick={() => onCopy(copyValue, copyKey)} aria-label={`Copy ${label.toLowerCase()}`}>
+            {copied === copyKey ? <CheckIcon fontSize="small" /> : <ContentCopyIcon fontSize="small" />}
+          </IconButton>
+        </Stack>
+      </Stack>
+    </>
+  );
+}
 
 export default function Contact() {
-  const [copied, setCopied] = React.useState<null | "email" | "phone">(null);
+  const [copied, setCopied] = React.useState<string | null>(null);
 
-  const email = "yumnaahwaris@gmail.com";
-  const phone = "+923356910909";
-
-  const socials = [
-    { name: "GitHub", url: "https://github.com/yumnawaris", icon: GitHubIcon },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/yumna-waris", icon: LinkedInIcon },
-    { name: "X / Twitter", url: "https://x.com/waris_yumna", icon: TwitterIcon },
-    { name: "Medium", url: "https://medium.com/@yumnaahwaris", icon: ArticleIcon },
-    { name: "Coursera", url: "https://www.coursera.org/user/85a7da3566159e08061efacef9258118", icon: SchoolIcon },
-    { name: "Udemy", url: "https://www.udemy.com/user/yumna-waris/", icon: SchoolIcon },
-    { name: "Website", url: "https://yumnawaris.github.io/yumna-portfolio", icon: LanguageIcon },
-  ] as const;
-
-  const copy = async (text: string, key: "email" | "phone") => {
+  const copy = async (text: string, key: string) => {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(key);
       setTimeout(() => setCopied(null), 1200);
     } catch {
-      // ignore
+      // Clipboard access can be denied by the browser; fail silently.
     }
   };
 
   return (
-    <Box id="contact" sx={{ py: { xs: 8, md: 12 }, position: "relative", overflow: "hidden",
-      "&:before": {
-        content: '""', position: "absolute", left: -160, top: -120, width: 380, height: 380, borderRadius: "50%",
-        background: "radial-gradient(closest-side, rgba(25,118,210,0.22), transparent 70%)", filter: "blur(12px)"
-      },
-      "&:after": {
-        content: '""', position: "absolute", right: -160, bottom: -120, width: 420, height: 420, borderRadius: "50%",
-        background: "radial-gradient(closest-side, rgba(156,39,176,0.22), transparent 70%)", filter: "blur(12px)"
-      }
-    }}>
+    <SectionBackdrop id="contact" blobs={CONTACT_BLOBS} sx={{ py: { xs: 8, md: 12 } }}>
       <Container>
-       <Typography variant="h3" sx={{ mb: 4, fontWeight: 800, background: "linear-gradient(90deg, #9c27b0, #1976d2)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>Contact</Typography>
+        <GradientText variant="h3" sx={{ mb: 4, fontWeight: 800 }}>
+          Contact
+        </GradientText>
 
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Paper variant="outlined" sx={{ p: 3, height: "100%" }}>
-              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 1 }}>
-                <EmailIcon color="primary" />
-                <Typography variant="h6">Email</Typography>
-              </Stack>
-              <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>{email}</Typography>
-                <Stack direction="row" spacing={1}>
-                  <IconButton component="a" href={`mailto:${email}?subject=Hello%20Yumna`} aria-label="Send email">
-                    <EmailIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton onClick={() => copy(email, "email")} aria-label="Copy email">
-                    {copied === "email" ? <CheckIcon fontSize="small" /> : <ContentCopyIcon fontSize="small" />}
-                  </IconButton>
-                </Stack>
-              </Stack>
+              <ContactRow
+                icon={EmailIcon}
+                label="Email"
+                value={contactInfo.email}
+                href={`mailto:${contactInfo.email}?subject=Hello%20Yumna`}
+                copyValue={contactInfo.email}
+                copyKey="email"
+                copied={copied}
+                onCopy={copy}
+              />
 
               <Divider sx={{ my: 2 }} />
 
-              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 1 }}>
-                <PhoneIcon color="primary" />
-                <Typography variant="h6">Phone</Typography>
-              </Stack>
-              <Stack direction="row" alignItems="center" justifyContent="space-between">
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>+92 335 6910909</Typography>
-                <Stack direction="row" spacing={1}>
-                  <IconButton component="a" href={`tel:${phone}`} aria-label="Call">
-                    <PhoneIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton onClick={() => copy("+92 335 6910909", "phone")} aria-label="Copy phone">
-                    {copied === "phone" ? <CheckIcon fontSize="small" /> : <ContentCopyIcon fontSize="small" />}
-                  </IconButton>
-                </Stack>
-              </Stack>
+              <ContactRow
+                icon={PhoneIcon}
+                label="Phone"
+                value={contactInfo.phone.display}
+                href={`tel:${contactInfo.phone.raw}`}
+                copyValue={contactInfo.phone.display}
+                copyKey="phone"
+                copied={copied}
+                onCopy={copy}
+              />
             </Paper>
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
             <Paper variant="outlined" sx={{ p: 3 }}>
-              <Typography variant="h6" sx={{ textAlign: { xs: "left", md: "center" }, mb: 2 }}>Social</Typography>
+              <Typography variant="h6" sx={{ textAlign: { xs: "left", md: "center" }, mb: 2 }}>
+                Social
+              </Typography>
               <Grid container spacing={1.5}>
-                {socials.map(({ name, url, icon: Icon }) => (
+                {socialLinks.map(({ name, url, icon: Icon }) => (
                   <Grid key={name} size={{ xs: 6, sm: 4 }}>
                     <Box component="a" href={url} target="_blank" rel="noopener noreferrer" sx={{ textDecoration: "none" }}>
-                      <Paper variant="outlined" sx={{ p: 1.5, display: "flex", alignItems: "center", gap: 1, justifyContent: "center", borderRadius: 2,
-                        transition: "transform .2s ease, box-shadow .2s ease", '&:hover': { transform: "translateY(-2px)", boxShadow: 4 } }}>
+                      <Paper
+                        variant="outlined"
+                        sx={{
+                          p: 1.5,
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1,
+                          justifyContent: "center",
+                          borderRadius: 2,
+                          transition: "transform .2s ease, box-shadow .2s ease",
+                          "&:hover": { transform: "translateY(-2px)", boxShadow: 4 },
+                        }}
+                      >
                         <Icon fontSize="small" />
                         <Typography variant="body2">{name}</Typography>
                       </Paper>
@@ -119,8 +141,6 @@ export default function Contact() {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </SectionBackdrop>
   );
 }
-
-

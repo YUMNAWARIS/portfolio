@@ -5,15 +5,19 @@ import ThemeClientProvider from "@/theme/ThemeClientProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const SITE_URL = "https://yumnawaris.github.io/yumna-portfolio";
+const SITE_NAME = "Yumna Portfolio";
+const DEFAULT_DESCRIPTION = "Professional portfolio built with Next.js and Material UI";
+
 export const metadata: Metadata = {
-  title: "Yumna | Portfolio",
-  description: "Professional portfolio built with Next.js and Material UI",
-  metadataBase: new URL("https://example.com"),
+  title: { default: "Yumna | Portfolio", template: `%s | ${SITE_NAME}` },
+  description: DEFAULT_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "Yumna | Portfolio",
-    description: "Professional portfolio built with Next.js and Material UI",
-    url: "https://example.com",
-    siteName: "Yumna Portfolio",
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
   },
 };
 

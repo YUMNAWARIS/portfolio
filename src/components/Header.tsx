@@ -5,8 +5,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
@@ -14,19 +12,14 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useTheme } from "@mui/material/styles";
-import { ColorModeContext } from "@/theme";
 import Link from "next/link";
-
-const sections = [
-  { label: "About Me", href: "/" },
-  { label: "MOOCs & Certs", href: "/moocs-certs" },
-  { label: "Activities", href: "/activities" },
-  { label: "Projects", href: "/projects" },
-  { label: "Writeups", href: "/blogs" },
-];
+import { ColorModeContext } from "@/theme";
+import GradientText from "@/components/GradientText";
+import { siteSections } from "@/data/nav";
 
 export default function Header() {
   const theme = useTheme();
@@ -41,20 +34,36 @@ export default function Header() {
   const toggleDrawer = (state: boolean) => () => setOpen(state);
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={0} sx={{ backdropFilter: "blur(8px)", borderBottom: 1, borderColor: "divider",
-      "&:before": { content: '""', position: "absolute", inset: 0, pointerEvents: "none",
-        background: "linear-gradient(90deg, rgba(156,39,176,0.18), rgba(25,118,210,0.18))", opacity: 0.5 }
-    }}>
+    <AppBar
+      position="sticky"
+      color="transparent"
+      elevation={0}
+      sx={{
+        backdropFilter: "blur(8px)",
+        borderBottom: 1,
+        borderColor: "divider",
+        "&:before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          background: "linear-gradient(90deg, rgba(156,39,176,0.18), rgba(25,118,210,0.18))",
+          opacity: 0.5,
+        },
+      }}
+    >
       <Container>
         <Toolbar disableGutters sx={{ gap: 1 }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexGrow: 1 }}>
-            <Typography variant="h6" component="div" sx={{ fontWeight: 800, background: "linear-gradient(90deg, #9c27b0, #1976d2)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>YW</Typography>
+            <GradientText variant="h6" component="div" sx={{ fontWeight: 800 }}>
+              YW
+            </GradientText>
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
-            {sections.map((s) => (
-              <Button key={s.href} component={Link} href={s.href} color="inherit">
-                {s.label}
+            {siteSections.map((section) => (
+              <Button key={section.href} component={Link} href={section.href} color="inherit">
+                {section.label}
               </Button>
             ))}
           </Box>
@@ -72,10 +81,10 @@ export default function Header() {
       <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 260 }} role="presentation" onClick={toggleDrawer(false)}>
           <List>
-            {sections.map((s) => (
-              <ListItem key={s.href} disablePadding>
-                <ListItemButton component={Link} href={s.href}>
-                  <ListItemText primary={s.label} />
+            {siteSections.map((section) => (
+              <ListItem key={section.href} disablePadding>
+                <ListItemButton component={Link} href={section.href}>
+                  <ListItemText primary={section.label} />
                 </ListItemButton>
               </ListItem>
             ))}
