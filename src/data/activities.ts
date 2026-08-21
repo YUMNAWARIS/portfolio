@@ -26,7 +26,7 @@ export const activities: Activity[] = [
   },
   {
     name: "Hackathon 2022",
-    organizer: "Fast Procm.net",
+    organizer: "Fast Procom.net",
     date: "25th March 2022",
     description: `Participated in Hackathon 2022 of Fast Procom. Our team got 1st rank out of 10.
     We proposed an IOT based system for solving major problems of a metropolitan city like Karachi.`,

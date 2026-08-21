@@ -16,20 +16,23 @@ export default function CertCard({ cert }: { cert: Certification }) {
         {cert.title}
       </Typography>
       <Typography variant="body2" sx={{ color: "text.secondary" }}>
-        {cert.issuer} • {cert.date}
+        {cert.issuer}
+        {cert.date ? ` • ${cert.date}` : ""}
       </Typography>
-      {cert.skills.length > 0 && (
+      {cert.skills && cert.skills.length > 0 && (
         <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap", gap: 1 }}>
           {cert.skills.map((skill) => (
             <Chip key={skill} label={skill} size="small" />
           ))}
         </Stack>
       )}
-      <Box sx={{ mt: 0.5 }}>
-        <Button size="small" variant="outlined" endIcon={<OpenInNewIcon />} component="a" href={cert.url} target="_blank" rel="noopener noreferrer">
-          View credential
-        </Button>
-      </Box>
+      {cert.url && (
+        <Box sx={{ mt: 0.5 }}>
+          <Button size="small" variant="outlined" endIcon={<OpenInNewIcon />} component="a" href={cert.url} target="_blank" rel="noopener noreferrer">
+            View credential
+          </Button>
+        </Box>
+      )}
     </Paper>
   );
 }

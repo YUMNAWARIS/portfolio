@@ -11,8 +11,8 @@ import SchoolIcon from "@mui/icons-material/School";
 export const contactInfo = {
   email: "yumnaahwaris@gmail.com",
   phone: {
-    raw: "+923356910909",
-    display: "+92 335 6910909",
+    raw: "+4915215722880",
+    display: "+49 1521 5722880",
   },
 };
 
@@ -34,5 +34,5 @@ export const socialLinks: SocialLink[] = [
   { name: "Medium", url: "https://medium.com/@yumnaahwaris", icon: ArticleIcon },
   { name: "Coursera", url: "https://www.coursera.org/user/85a7da3566159e08061efacef9258118", icon: SchoolIcon },
   { name: "Udemy", url: "https://www.udemy.com/user/yumna-waris/", icon: SchoolIcon },
-  { name: "Website", url: "https://yumnawaris.github.io/yumna-portfolio", icon: LanguageIcon },
+  { name: "Website", url: "https://portfolio-sepia-eight-t1gm4b68kv.vercel.app", icon: LanguageIcon },
 ];

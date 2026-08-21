@@ -55,19 +55,21 @@ export default function Hero() {
             Hi, I&apos;m Yumna
           </GradientText>
           <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontSize: { xs: 16, md: 18 }, lineHeight: 1.7, maxWidth: "70ch" }}>
-            I&apos;m a <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Software Engineer II</Box> at
-            <Box component="span" sx={{ fontWeight: 700, color: "primary.main" }}> PayEngine</Box>, where we build tools that help
-            <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> vertical SaaS companies</Box> manage their
-            merchants and processor relationships more effectively.
+            I&apos;m an <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>M.Sc. student in International Software Systems Science</Box> at
+            <Box component="span" sx={{ fontWeight: 700, color: "primary.main" }}> Otto-Friedrich-Universität Bamberg</Box>, Germany, with a background building
+            <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> data-intensive, scalable</Box> systems as a
+            <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> Software Engineer II</Box> at
+            <Box component="span" sx={{ fontWeight: 700, color: "primary.main" }}> PayEngine</Box>, where I designed secure, event-driven
+            <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> fintech</Box> systems for merchant onboarding, risk, and payment processing.
             <br />
-            Alongside my role, I&apos;m studying <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>machine learning</Box> and
-            <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> AI</Box>, building personal projects and
-            replicating published papers to deepen my understanding.
+            Alongside my studies, I&apos;m exploring <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>AI/ML</Box> and
+            <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}> agentic systems</Box> — building AI agents, RAG workflows, and personal
+            projects to deepen my understanding.
             <br />
-            I&apos;m exploring <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Master&rsquo;s opportunities in AI/ML Data-intensive systems</Box>
+            Based in <Box component="span" sx={{ fontWeight: 700, color: "secondary.main" }}>Munich, Germany</Box>.
           </Typography>
           <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-            <Button component="a" href="/yumnawaris-resume.pdf" target="_blank" rel="noopener noreferrer" variant="outlined">
+            <Button component="a" href="/yumna_waris_resume_latest.pdf" target="_blank" rel="noopener noreferrer" variant="outlined">
               Resume
             </Button>
           </Box>

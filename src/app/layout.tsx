@@ -5,7 +5,7 @@ import ThemeClientProvider from "@/theme/ThemeClientProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const SITE_URL = "https://yumnawaris.github.io/yumna-portfolio";
+const SITE_URL = "https://portfolio-sepia-eight-t1gm4b68kv.vercel.app";
 const SITE_NAME = "Yumna Portfolio";
 const DEFAULT_DESCRIPTION = "Professional portfolio built with Next.js and Material UI";
 

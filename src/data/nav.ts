@@ -9,8 +9,9 @@ export type NavSection = {
  */
 export const siteSections: NavSection[] = [
   { label: "About Me", href: "/" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
   { label: "MOOCs & Certs", href: "/moocs-certs" },
   { label: "Activities", href: "/activities" },
-  { label: "Projects", href: "/projects" },
   { label: "Writeups", href: "/blogs" },
 ];

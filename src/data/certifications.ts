@@ -1,12 +1,14 @@
-export type CertProvider = "coursera" | "udemy" | "deeplearning.ai";
+export type CertProvider = "coursera" | "udemy" | "deeplearning.ai" | "other";
 
 export type Certification = {
   title: string;
   provider: CertProvider;
   issuer: string;
-  date: string;
-  url: string;
-  skills: string[];
+  /** Omit when the source doesn't give a completion date. */
+  date?: string;
+  /** Omit when there's no public credential link to share. */
+  url?: string;
+  skills?: string[];
 };
 
 /** The provider groups shown (in order) on the MOOCs & Certs page. */
@@ -14,6 +16,7 @@ export const certProviderGroups: { key: CertProvider; label: string }[] = [
   { key: "deeplearning.ai", label: "DeepLearning.AI" },
   { key: "coursera", label: "Coursera" },
   { key: "udemy", label: "Udemy" },
+  { key: "other", label: "Additional Certifications" },
 ];
 
 /** MOOCs and certificates completed. Add new entries here. */
@@ -92,5 +95,17 @@ export const certifications: Certification[] = [
     date: "2025",
     url: "https://learn.deeplearning.ai/certificates/11cff4c0-24ed-4e45-b38e-01c5ed13005c",
     skills: ["Agentic AI", "LLMs", "LangChain"],
+  },
+
+  // ---- Additional certifications (LinkedIn) ----
+  {
+    title: "Java (Basic) Skills Certification Test",
+    provider: "other",
+    issuer: "LinkedIn Skill Assessment",
+  },
+  {
+    title: "Cisco Certified Network Associate Industrial (CCNA I)",
+    provider: "other",
+    issuer: "Cisco",
   },
 ];
