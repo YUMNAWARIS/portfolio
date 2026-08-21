@@ -3,13 +3,22 @@ import type { Project } from "@/components/ProjectCard";
 /** Personal projects shown on the Projects page. Add new entries here. */
 export const projects: Project[] = [
   {
+    id: "nexprobiz",
+    title: "Nexprobiz",
+    description:
+      "A full-stack corporate accounting application for managing financial data, account books, transactions, and financial statements — complex data tables, forms, validation, and filtering built on a NestJS + PostgreSQL backend.",
+    tech: ["TypeScript", "React", "Material UI", "React Tabulator", "Formik", "Yup", "NestJS", "PostgreSQL"],
+    repoUrl: "https://github.com/YUMNAWARIS/nexprobiz-digital-accountant",
+    image: "/projects/nexprobiz.svg",
+  },
+  {
     id: "learnscope",
     title: "LearnScope – AI Academic Assistant",
     description:
       "An AI-enhanced academic assistant for professors and students that automates the generation of course outlines, lecture materials, assessments, and academic content using LLM-powered workflows.",
     tech: ["Python", "Flask", "LangChain", "LangGraph", "Generative AI"],
     documentationUrl: "https://drive.google.com/drive/u/2/folders/1gvkfV1hQFn94flZiT0eZIUr82z4KhcnP",
-    image: "/projects/ask-db.png",
+    image: "/projects/learnscope.svg",
   },
   {
     id: "ask-db",
@@ -45,12 +54,6 @@ export const projects: Project[] = [
     description:
       "A scalable log-processing framework built from scratch in Java: a custom thread-pool executor and bounded blocking queue power a producer-consumer pipeline that concurrently analyzes 10,000+ log files across configurable worker pools, achieving up to 5× throughput over sequential execution — validated with a comprehensive JUnit 5 test suite and benchmark reports.",
     tech: ["Java", "Multithreading", "Concurrency", "Executor Framework", "JUnit 5", "Maven"],
-  },
-  {
-    id: "nexprobiz",
-    title: "Nexprobiz",
-    description:
-      "A full-stack corporate accounting application for managing financial data, account books, transactions, and financial statements — complex data tables, forms, validation, and filtering built on a NestJS + PostgreSQL backend.",
-    tech: ["TypeScript", "React", "Material UI", "React Tabulator", "Formik", "Yup", "NestJS", "PostgreSQL"],
+    image: "/projects/concurrent-log-analysis-framework.svg",
   },
 ];

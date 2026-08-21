@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="LearnScope – AI Academic Assistant logo">
+  <defs>
+    <linearGradient id="lsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="500" fill="url(#lsBg)" />
+
+  <!-- icon badge -->
+  <rect x="180" y="170" width="160" height="160" rx="34" fill="#ffffff" />
+
+  <!-- graduation cap -->
+  <rect x="228" y="250" width="64" height="30" rx="10" fill="#134e4a" />
+  <polygon points="260,196 316,234 260,272 204,234" fill="#0f766e" />
+  <circle cx="260" cy="234" r="7" fill="#0f766e" />
+  <line x1="260" y1="234" x2="300" y2="280" stroke="#0f766e" stroke-width="4" stroke-linecap="round" />
+  <circle cx="300" cy="282" r="7" fill="#0f766e" />
+
+  <!-- AI sparkle accent -->
+  <polygon points="312,180 318,190 332,196 318,202 312,212 306,202 292,196 306,190" fill="#f59e0b" />
+
+  <!-- wordmark -->
+  <text x="400" y="272" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="800" fill="#ffffff">LearnScope</text>
+  <text x="402" y="318" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600" letter-spacing="4" fill="#ffffff" fill-opacity="0.85">AI ACADEMIC ASSISTANT</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Concurrent Log Analysis Framework logo">
+  <defs>
+    <linearGradient id="clafBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9c27b0" />
+      <stop offset="100%" stop-color="#1976d2" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="500" fill="url(#clafBg)" />
+
+  <!-- icon badge -->
+  <rect x="180" y="170" width="160" height="160" rx="34" fill="#ffffff" />
+
+  <!-- terminal window -->
+  <rect x="206" y="196" width="108" height="108" rx="12" fill="#10233d" />
+  <!-- window control dots -->
+  <circle cx="220" cy="212" r="4" fill="#ff5f56" />
+  <circle cx="233" cy="212" r="4" fill="#ffbd2e" />
+  <circle cx="246" cy="212" r="4" fill="#27c93f" />
+  <line x1="206" y1="222" x2="314" y2="222" stroke="#26456e" stroke-width="1.5" />
+
+  <!-- log lines -->
+  <rect x="218" y="236" width="58" height="8" rx="4" fill="#7fb3ff" />
+  <rect x="218" y="256" width="76" height="8" rx="4" fill="#ffffff" />
+  <rect x="218" y="276" width="46" height="8" rx="4" fill="#7fb3ff" />
+  <rect x="218" y="288" width="14" height="12" fill="#ffffff" opacity="0.85" />
+
+  <!-- wordmark -->
+  <text x="400" y="228" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="800" fill="#ffffff">Concurrent Log</text>
+  <text x="400" y="298" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="800" fill="#ffffff">Analysis Framework</text>
+  <text x="402" y="336" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" letter-spacing="3" fill="#ffffff" fill-opacity="0.85">JAVA CONCURRENCY FRAMEWORK</text>
+</svg>
